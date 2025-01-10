@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.2.0...v0.2.1) (2025-01-10)
+
+
+### Bug Fixes
+
+* version constraint ([239e896](https://github.com/01Joseph-Hwang10/terraform-google-cloud/commit/239e8962d027ce9fc01a06631d5415d01aa8bd58))
+
 ## [0.2.0](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.1.0...v0.2.0) (2025-01-10)
 
 
