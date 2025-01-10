@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.2.1...v0.3.0) (2025-01-10)
+
+
+### Features
+
+* modules ([56f6599](https://github.com/01Joseph-Hwang10/terraform-google-cloud/commit/56f65998ce9f7b1f8b6b80bff15c0675c393677e))
+
 ## [0.2.1](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.2.0...v0.2.1) (2025-01-10)
 
 
