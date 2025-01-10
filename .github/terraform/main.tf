@@ -8,6 +8,9 @@ resource "github_repository" "repository" {
     "gcp",
     "google-cloud-platform",
     "cloud-build",
+    "artifact-registry",
+    "iam",
+    "secret-manager",
   ]
 
   visibility = "public"
