@@ -1,5 +1,5 @@
 resource "github_repository" "repository" {
-  name         = "terraform-google-cloud-build"
+  name         = "terraform-google-cloud"
   description  = "Set of abstracted modules to deploy resources on Google Cloud Platform"
   homepage_url = "https://registry.terraform.io/modules/01Joseph-Hwang10/cloud-build/google/latest"
   topics = [

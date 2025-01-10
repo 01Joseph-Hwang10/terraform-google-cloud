@@ -6,7 +6,7 @@
   "packages": {
     ".": {
       "release-type": "simple",
-      "package-name": "terraform-google-cloud-build",
+      "package-name": "terraform-google-cloud",
       "exclude-paths": [
         "docs",
         "tests",
