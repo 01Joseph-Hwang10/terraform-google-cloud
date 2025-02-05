@@ -1,6 +1,6 @@
-# Google Cloud Build Terraform Modules
+# Google Cloud Terraform Modules
 
-Set of abstracted modules to deploy resources on Google Cloud Build.
+Set of abstracted modules to deploy resources on Google Cloud Platform.
 
 ## Modules
 
