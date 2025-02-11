@@ -42,6 +42,12 @@ resource "google_compute_instance_template" "default" {
     source_image = local.effective_source_image
     type         = "PERSISTENT"
   }
+  scheduling {
+    preemptible         = var.preemptible
+    automatic_restart   = var.preemptible ? false : true
+    provisioning_model  = var.preemptible ? "SPOT" : "STANDARD"
+    on_host_maintenance = var.preemptible ? "TERMINATE" : "MIGRATE"
+  }
   metadata = {
     startup-script = var.startup_script,
   }

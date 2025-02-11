@@ -34,3 +34,9 @@ variable "source_image" {
   nullable    = true
   default     = null
 }
+
+variable "preemptible" {
+  description = "Whether the instances should be preemptible"
+  type        = bool
+  default     = false
+}
