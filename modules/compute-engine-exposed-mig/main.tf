@@ -15,6 +15,10 @@ data "google_compute_image" "debian_12" {
   project = "debian-cloud"
 }
 
+locals {
+  effective_source_image = coalesce(var.source_image, data.google_compute_image.debian_12.self_link)
+}
+
 resource "google_compute_instance_template" "default" {
   name_prefix  = local.l7-xlb-mig-template
   machine_type = var.compute_machine_type
@@ -35,7 +39,7 @@ resource "google_compute_instance_template" "default" {
     auto_delete  = true
     boot         = true
     mode         = "READ_WRITE"
-    source_image = data.google_compute_image.debian_12.self_link
+    source_image = local.effective_source_image
     type         = "PERSISTENT"
   }
   metadata = {

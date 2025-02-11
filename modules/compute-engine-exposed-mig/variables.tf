@@ -27,3 +27,10 @@ variable "network" {
 variable "service_account" {
   description = "The service account to use for the compute instances"
 }
+
+variable "source_image" {
+  description = "The source image to use for the compute instances"
+  type        = string
+  nullable    = true
+  default     = null
+}
