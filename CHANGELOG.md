@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.3.0...v0.4.0) (2025-02-11)
+
+
+### Features
+
+* can be preemptible ([38a1d58](https://github.com/01Joseph-Hwang10/terraform-google-cloud/commit/38a1d58d15df58ebba7be7909f6bd02c101c0661))
+* can set source image ([018aae0](https://github.com/01Joseph-Hwang10/terraform-google-cloud/commit/018aae040cc017d23bc09d127658aaa0b6d6426f))
+
 ## [0.3.0](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.2.1...v0.3.0) (2025-01-10)
 
 
