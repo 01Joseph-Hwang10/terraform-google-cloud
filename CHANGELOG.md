@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.1](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.4.0...v0.4.1) (2025-02-12)
+
+
+### Bug Fixes
+
+* gce exposed mig preemptible mode ([a7cdf27](https://github.com/01Joseph-Hwang10/terraform-google-cloud/commit/a7cdf272602488f760647f5eedc8703575dff6e5))
+
 ## [0.4.0](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.3.0...v0.4.0) (2025-02-11)
 
 
