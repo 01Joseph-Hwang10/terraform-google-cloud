@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.0](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.5.1...v0.6.0) (2025-02-12)
+
+
+### Features
+
+* https support ([63fa9fa](https://github.com/01Joseph-Hwang10/terraform-google-cloud/commit/63fa9fa7e2a624ec4cc174d8a3c34c07a5523040))
+
 ## [0.5.1](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.5.0...v0.5.1) (2025-02-12)
 
 
