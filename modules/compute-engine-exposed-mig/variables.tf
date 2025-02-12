@@ -43,7 +43,7 @@ variable "preemptible" {
 
 variable "replace_triggered_by" {
   description = "The trigger that caused the replacement of the instances"
-  type        = list(string)
+  type        = string
   nullable    = true
   default     = null
 }

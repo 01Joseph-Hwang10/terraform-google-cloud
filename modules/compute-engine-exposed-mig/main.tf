@@ -19,6 +19,10 @@ locals {
   effective_source_image = coalesce(var.source_image, data.google_compute_image.debian_12.self_link)
 }
 
+resource "terraform_data" "google_compute_instance_template_replacement_trigger" {
+  input = var.replace_triggered_by
+}
+
 resource "google_compute_instance_template" "default" {
   name_prefix  = local.l7-xlb-mig-template
   machine_type = var.compute_machine_type
@@ -55,7 +59,7 @@ resource "google_compute_instance_template" "default" {
 
   lifecycle {
     create_before_destroy = true
-    replace_triggered_by  = var.replace_triggered_by
+    replace_triggered_by  = [terraform_data.google_compute_instance_template_replacement_trigger]
   }
 }
 
