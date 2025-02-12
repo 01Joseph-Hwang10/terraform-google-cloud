@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.1](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.5.0...v0.5.1) (2025-02-12)
+
+
+### Bug Fixes
+
+* replacement trigger ([82ac1e6](https://github.com/01Joseph-Hwang10/terraform-google-cloud/commit/82ac1e69ac58ac64d8b8fc31fd278e5513d90c3f))
+
 ## [0.5.0](https://github.com/01Joseph-Hwang10/terraform-google-cloud/compare/v0.4.1...v0.5.0) (2025-02-12)
 
 
