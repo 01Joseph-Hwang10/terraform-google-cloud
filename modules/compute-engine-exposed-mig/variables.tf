@@ -47,3 +47,15 @@ variable "replace_triggered_by" {
   nullable    = true
   default     = null
 }
+
+variable "https" {
+  description = "Whether to allow HTTPS traffic"
+  type        = bool
+  default     = false
+}
+
+variable "certificates" {
+  description = "The certificates to use for HTTPS traffic"
+  type        = list(string)
+  default     = []
+}

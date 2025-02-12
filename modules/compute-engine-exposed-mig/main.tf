@@ -105,14 +105,16 @@ resource "google_compute_health_check" "default" {
 # Network
 #-----------------------
 locals {
-  l7-xlb-backend-subnet    = "${var.ns}-backend-subnet"
-  l7-xlb-proxy-only        = "${var.ns}-proxy-only"
-  l7-xlb-forwarding-rule   = "${var.ns}-forwarding-rule"
-  l7-xlb-backend-service   = "${var.ns}-backend-service"
-  l7-xlb-url-map           = "${var.ns}-url-map"
-  l7-xlb-static-ip         = "${var.ns}-static-ip"
-  l7-xlb-target-http-proxy = "${var.ns}-target-http-proxy"
-  l7-xlb-fw-allow-iap-hc   = "${var.ns}-fw-allow-iap-hc"
+  l7-xlb-backend-subnet      = "${var.ns}-backend-subnet"
+  l7-xlb-proxy-only          = "${var.ns}-proxy-only"
+  l7-xlb-forwarding-rule     = "${var.ns}-forwarding-rule"
+  l7-xlb-ssl-forwarding-rule = "${var.ns}-ssl-forwarding-rule"
+  l7-xlb-backend-service     = "${var.ns}-backend-service"
+  l7-xlb-url-map             = "${var.ns}-url-map"
+  l7-xlb-static-ip           = "${var.ns}-static-ip"
+  l7-xlb-target-http-proxy   = "${var.ns}-target-http-proxy"
+  l7-xlb-target-https-proxy  = "${var.ns}-target-https-proxy"
+  l7-xlb-fw-allow-iap-hc     = "${var.ns}-fw-allow-iap-hc"
 }
 
 resource "google_compute_subnetwork" "default" {
@@ -138,6 +140,24 @@ resource "google_compute_global_forwarding_rule" "default" {
 resource "google_compute_target_http_proxy" "default" {
   name    = local.l7-xlb-target-http-proxy
   url_map = google_compute_url_map.default.id
+}
+
+resource "google_compute_global_forwarding_rule" "ssl" {
+  count                 = var.https ? 1 : 0
+  name                  = local.l7-xlb-ssl-forwarding-rule
+  depends_on            = [google_compute_subnetwork.default]
+  ip_protocol           = "TCP"
+  load_balancing_scheme = "EXTERNAL_MANAGED"
+  port_range            = "443"
+  target                = google_compute_target_http_proxy.default.id
+}
+
+resource "google_compute_target_https_proxy" "ssl" {
+  count   = var.https ? 1 : 0
+  name    = local.l7-xlb-target-https-proxy
+  url_map = google_compute_url_map.default.id
+
+  ssl_certificates = var.certificates
 }
 
 resource "google_compute_url_map" "default" {
