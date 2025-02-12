@@ -55,6 +55,7 @@ resource "google_compute_instance_template" "default" {
 
   lifecycle {
     create_before_destroy = true
+    replace_triggered_by  = var.replace_triggered_by
   }
 }
 
